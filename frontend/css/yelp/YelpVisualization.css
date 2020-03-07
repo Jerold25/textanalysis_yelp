@@ -1,0 +1,345 @@
+body {
+    background-color: #f2f8f9;
+}
+
+.container {
+  max-width: 98% !important;
+}
+
+#map{
+    /* margin: 10px; */
+    height: 400px;
+    width: 100%;
+}
+
+.map-holder {
+    background-color: #ffe4e433;
+}
+
+.restaurant-icon{    
+    margin-left: -12px;
+    margin-top: -12px;
+    border-radius: 18px;
+    border: 2px solid #2e3038;
+    text-align: center;
+    /* color: #3F51B5; */
+    /* background-color: #fff; */
+    /* font-size: 16px; */
+    background-image: url('../../images/hotel.png');
+    background-size: cover;
+    /* background-color: orange; */
+  }
+
+  .restaurantSize-0 {
+    width: 30px !important;
+    height: 30px !important;
+    background-color:#02ff00;
+  }
+
+  .restaurantSize-4 {
+    width: 25px !important;
+    height: 25px !important;
+    background-color: #a0ffa0;
+  }
+
+  .restaurantSize-3 {
+    width: 20px !important;
+    height: 20px !important;
+    background-color: #edf30d;
+  }
+
+  .restaurantSize-2 {
+    width: 15px !important;
+    height: 15px !important;
+    background-color: #f9be10;
+  }
+
+  .restaurantSize-1 {
+    width: 10px !important;
+    height: 10px !important;
+    background-color:#e27c53;
+  }
+
+  .restaurantSize-6 {
+    width: 8px !important;
+    height: 8px !important;
+    background-color: orange;
+  }
+
+  /* liveliness heatmap */
+
+  rect.bordered {
+    stroke: #E6E6E6;
+    stroke-width:2px;   
+  }
+
+  text.mono {
+    font-size: 9pt;
+    font-family: Consolas, courier;
+    fill: #aaa;
+  }
+
+  text.axis-workweek {
+    fill: #000;
+  }
+
+  text.axis-worktime {
+    fill: #000;
+  }
+
+  /* liveliness heatmap */
+
+/* ratings evolution  */
+
+#timelineContainer .metric-chart text {
+	fill: #565656;
+	font-size: 9px;
+	font-family: Helvetica, Arial, "sans serif";
+}
+
+#timelineContainer .metric-chart text.no-data {
+	font-size: 16px;
+	font-weight: 100;
+	fill:#d0d0d0;
+}
+
+#timelineContainer .metric-chart rect.no-data {
+	fill: #f5f5f5;
+}
+
+/* When there is data ...*/
+
+/* CB: padding to display better on bl.ocks.org */
+#timelineContainer {
+	padding: 64px;
+}
+
+#timelineContainer .metric-chart rect.plot-background{
+	fill: white;
+}
+
+#timelineContainer #sentimentEvolution .metric-chart path.line {
+	fill: none;
+	stroke: rgb(216, 196, 14) !important; /* default, changed in each theme */
+	stroke-width: 1.5px;
+	clip-path: url(#clip);
+}
+
+#timelineContainer #sentimentEvolution .metric-chart path.area {
+	fill: rgb(216, 196, 14) !important;/* CB default, changed in each theme */
+	opacity: 0.6;
+	clip-path: url(#clip);
+}
+
+#timelineContainer .metric-chart path.line {
+	fill: none;
+	stroke: #00AA8D; /* default, changed in each theme */
+	stroke-width: 1.5px;
+	clip-path: url(#clip);
+}
+
+#timelineContainer .metric-chart path.area {
+	fill: #00AA8D; /* CB default, changed in each theme */
+	opacity: 0.6;
+	clip-path: url(#clip);
+}
+
+#timelineContainer .metric-chart .axis {
+	shape-rendering: crispEdges;
+}
+
+#timelineContainer .metric-chart .x.axis .domain{
+	display:none;
+}
+
+#timelineContainer .metric-chart .x.axis line {
+	stroke: white;
+	opacity: 0.4;
+}
+
+#timelineContainer .metric-chart .context .x.axis line {
+	display: none;
+}
+
+#timelineContainer .metric-chart .y.axis .domain{
+	display: none;
+}
+
+#timelineContainer .metric-chart .y.axis.title{
+	font-size: 13px;
+	font-weight: 100;
+}
+
+#timelineContainer .metric-chart .y.axis line {
+	stroke: #565656;
+	stroke-dasharray: 2,2;
+	stroke-opacity: 0.3;
+}
+
+#timelineContainer .metric-chart .brush .extent {
+  fill-opacity: .07;
+  shape-rendering: crispEdges;
+  clip-path: url(#clip);
+}
+
+#timelineContainer .metric-chart rect.pane {
+	cursor: move;
+	fill: none;
+	pointer-events: all;
+}
+/* brush handles  */
+#timelineContainer .metric-chart .resize .handle {
+	fill: #555;
+}
+
+#timelineContainer .metric-chart .resize .handle-mini {
+	fill: white;
+    stroke-width: 1px;
+    stroke: #555;
+}
+
+#timelineContainer .metric-chart .scale_button {
+	cursor: pointer;
+}
+
+#timelineContainer .metric-chart .scale_button rect {
+	fill: #eaeaea;
+}
+#timelineContainer .metric-chart .scale_button:hover text {
+	fill: #417DD6;
+	transition: all 0.1s cubic-bezier(.25,.8,.25,1);
+}
+
+#timelineContainer .metric-chart text#displayDates  {
+	font-weight: bold;
+}
+
+/* ratings evolution */
+
+/* stacked bar chart */
+
+#stackedchart .bar--positive {
+  fill: steelblue;
+}
+
+#stackedchart .bar--negative {
+  fill: darkorange;
+}
+
+#stackedchart .axis text {
+  font: 10px sans-serif;
+}
+
+#stackedchart .axis path,
+#stackedchart .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+/* stacked bar chart */
+
+
+/* word cloud css */
+
+.label-background-strong {
+  fill: white;
+  fill-opacity: .8;
+}
+
+#wolfstar-container {
+  cursor: default;
+}
+
+svg text{
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+/* word cloud css */
+
+#cloud-container text {
+  cursor: pointer;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.reviewImagae {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background: #f5f560;
+  padding: 3px;
+}
+
+#reviewsList {
+  list-style-type: none;
+  margin: 10px;
+}
+
+#reviewsList li {  
+  padding: 10px;
+  margin: 10px;
+}
+
+/* evolution viz */
+
+#evolutionComparison {
+  font: 10px sans-serif;
+}
+
+#evolutionComparison .axis path,
+#evolutionComparison .axis line, 
+#evolutionComparison .axis1 path,
+#evolutionComparison .axis1 line {
+  fill: none;
+  stroke: #E6E7E8;
+  shape-rendering: crispEdges;
+}
+
+#evolutionComparison .x.axis path,#evolutionComparison .x.axis1 path {
+  display: none;
+}
+
+#evolutionComparison .line {
+  fill: none;
+  stroke-width: 1.5px;
+}
+
+#evolutionComparison .legend-box {
+  cursor: pointer;  
+}
+
+#evolutionComparison #mouse-tracker {
+  stroke: #E6E7E8;
+  stroke-width: 1px;
+}
+
+#evolutionComparison .hover-line { 
+  stroke: #E6E7E8;
+  fill: none;
+  stroke-width: 1px;
+  left: 10px;
+  shape-rendering: crispEdges;
+  opacity: 1e-6;
+}
+
+#evolutionComparison .hover-text {
+  stroke: none;
+  font-size: 30px;
+  font-weight: bold;
+  fill: #000000;
+}
+
+#evolutionComparison .tooltip {
+  font-weight: normal;
+}
+
+#evolutionComparison .brush .extent {
+  stroke: #FFF;
+  shape-rendering: crispEdges;
+}
+
+/* evolution viz */

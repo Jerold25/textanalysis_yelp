@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Yelp-DataVisualization</title>
+        
+        <!-- third party -->
+        <!-- js -->
+        <script src="js/jquery/jquery.js"></script>
+        
+        <script src="js/d3/d3-v5.min.js"></script> 
+        <script>
+            window.d3v5 = d3;
+            window.d3 = null;
+            console.log("for d3v5, use window.d3v5 :"+d3v5.version);
+        </script>       
+
+        <script src="js/d3/d3-v3.min.js"></script> 
+        <script>
+            window.d3v3 = d3;
+            window.d3 = null;
+            console.log("for d3v3, use window.d3v3 :"+d3v3.version);
+        </script>
+        <!-- <script type="text/javascript" src="js/stamen/tile.stamen.js"></script>                         -->
+
+        <!-- Leaflet -->
+        <script src="js/leaflet/leaflet.js"></script>
+
+        <!-- Mapbox GL -->
+        <!-- <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.css" rel='stylesheet' /> -->
+        <link rel="stylesheet" type="text/css" href="css/mapbox/mapbox-gl.css">
+        <!-- <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.35.1/mapbox-gl.js"></script> -->
+        <script src="js/mapbox/mapbox-gl.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.3/lib/alea.min.js"></script>
+        <script src="http://momentjs.com/downloads/moment.js"></script>
+
+
+        <script src="js/leaflet/leaflet-mapbox-gl.js"></script>
+        <script src="js/d3-wordcloud/d3.layout.cloud.js"></script>
+
+        <!-- js -->
+        <!-- css -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/leaflet/leaflet.css">
+
+        <!-- Word cloud js -->
+        <!-- <script src="https://www.koolchart.com/demo/LicenseKey/codepen/KoolChartLicense.js"></script>
+        <script src="https://www.koolchart.com/demo/KoolChart/JS/KoolIntegration.js"></script>
+        <link rel="stylesheet" href="https://www.koolchart.com/demo/KoolChart/Assets/Css/KoolChart.css"/>
+        <link rel="stylesheet" href="https://www.koolchart.com/demo/Samples/Web/sample.css"/> -->
+        <!-- third party -->
+
+        <!-- our own files -->
+        <!-- js -->
+        <!-- <script src="js/yelp/data/restaurants.js"></script> -->
+        <script src="js/yelp/data/LimitedRestaurants.js"></script>
+        <script src="js/yelp/data/heat_map.js"></script>
+        <script src="js/yelp/data/RatingsEvolution.js"></script>
+        <script src="js/yelp/data/SentimentBarData.js"></script>        
+        <script src="js/yelp/data/word_cloud.js"></script>
+        <script src="js/yelp/data/fulldata.js"></script>
+        <!-- <script src="js/yelp/data/EvolutionData.js"></script> -->
+        <!-- <script src="js/yelp/data/EvolutionSubsetData.js"></script> -->
+        <script src="js/yelp/data/EvolutionActual.js"></script>
+        <script src="js/yelp/YelpVisualization.js"></script>
+        <!-- js -->
+        <!-- css -->
+        <link rel="stylesheet" type="text/css" href="css/yelp/YelpVisualization.css">
+        <!-- css -->
+        <!-- our own files -->
+
+        <script>
+            $(document).ready(function() {
+                VisualizationPage.renderPage();
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col m-1 border map-holder">                    
+                    <div id="map">
+                    </div>
+                </div>
+                <div class="col m-1 border">
+                    <div id="liveliness">Click on a restaurant to see information about it's busy hours.</div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col m-1 border">
+                        <div id="evolutionComparison">
+
+                        </div>
+                    </div>
+            </div>
+            <!-- <div class="row">
+                <div class="col border mt-4">
+                    <div id="liveliness">Click on a restaurant to see information about it's busy hours.</div>
+                </div>
+            </div> -->
+            <div id="timelineContainer" class="row">
+                <!-- <div class="col-12" id="timeline"></div> -->
+                <div class="col border m-1">
+                    <div id="metric-modal">
+                        Click on a restaurant to see information about evolution of it's ratings.
+                    </div>
+                </div>
+                <div class="col m-1 border">
+                    <div id="sentimentEvolution">
+                        Click on a restaurant to see information about evolution of it's sentiment score from reviews.
+                    </div>
+                </div>
+            </div>
+            <div id="sentimentWordsBlock" class="row">
+                <!-- <div class="col border m-1">
+                    <div id="stackedchart">
+                        Stacked bar chart of words with sentiment.
+                    </div>
+                </div> -->
+                <div class="col border m-1">
+                        <div id="cloud-container">
+                            Sentiment analysis word cloud.
+                        </div>
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col border m-1">
+                        <div id="reviews">
+                            <ul id="reviewsList">
+                                Relevant comments.
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </body>
+</html>
